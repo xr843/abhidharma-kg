@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿毗达摩法相知识图谱</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>阿毗达摩法相知识图谱</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="nav-overview" class="active">概览</a></li>
+                <li><a href="#" id="nav-concepts">概念浏览</a></li>
+                <li><a href="#" id="nav-graph">图谱可视化</a></li>
+                <li><a href="#" id="nav-about">关于项目</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="overview" class="active">
+            <h2>阿毗达摩法相知识图谱概览</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>五位七十五法</h3>
+                    <p>阿毗达摩系统将一切法分为五大类七十五种</p>
+                    <div class="category-list">
+                        <div class="category-item">
+                            <div class="category-name">色法</div>
+                            <div class="category-count">11</div>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-name">心法</div>
+                            <div class="category-count">1</div>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-name">心所法</div>
+                            <div class="category-count">51</div>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-name">心不相应行法</div>
+                            <div class="category-count">14</div>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-name">无为法</div>
+                            <div class="category-count">3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3>图谱统计</h3>
+                    <div id="graph-stats">
+                        <p>正在加载数据...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="concepts">
+            <h2>概念浏览</h2>
+            <div class="filter-container">
+                <label for="category-filter">按类别筛选：</label>
+                <select id="category-filter">
+                    <option value="">全部类别</option>
+                </select>
+                <input type="text" id="search-input" placeholder="搜索概念...">
+            </div>
+            <div class="concepts-list" id="concepts-container">
+                <p>正在加载概念数据...</p>
+            </div>
+        </section>
+
+        <section id="graph">
+            <h2>图谱可视化</h2>
+            <div class="graph-controls">
+                <button id="zoom-in">放大</button>
+                <button id="zoom-out">缩小</button>
+                <button id="reset-view">重置视图</button>
+            </div>
+            <div id="graph-container"></div>
+        </section>
+
+        <section id="about">
+            <h2>关于项目</h2>
+            <div class="about-content">
+                <p>阿毗达摩法相知识图谱旨在将佛教阿毗达摩系统中的"五位七十五法"概念结构化为图形数据库，便于检索、可视化和分析。</p>
+                <p>本项目基于《法宗原》经典文本，使用大语言模型API进行法相概念提取，并构建基于NebulaGraph的图数据库系统。</p>
+                <h3>项目特点</h3>
+                <ul>
+                    <li>基于NebulaGraph构建的知识图谱数据库</li>
+                    <li>使用大型语言模型API进行法相概念自动抽取</li>
+                    <li>直观的概念浏览和关系可视化界面</li>
+                    <li>强大的图谱分析和查询功能</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 阿毗达摩法相知识图谱项目</p>
+    </footer>
+
+    <div id="concept-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="concept-detail-container">
+                <p>加载中...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

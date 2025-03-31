@@ -1,0 +1,71 @@
+version: '3'
+services:
+  # NebulaGraph服务
+  metad:
+    image: vesoft/nebula-metad:v3.5.0
+    container_name: nebula-metad
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    command:
+      - --local_ip=172.28.1.1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://172.28.1.1:9559/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      nebula-net:
+        ipv4_address: 172.28.1.1
+
+  storaged:
+    image: vesoft/nebula-storaged:v3.5.0
+    container_name: nebula-storaged
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    command:
+      - --meta_server_addrs=172.28.1.1:9559
+      - --local_ip=172.28.1.2
+    depends_on:
+      - metad
+    networks:
+      nebula-net:
+        ipv4_address: 172.28.1.2
+
+  graphd:
+    image: vesoft/nebula-graphd:v3.5.0
+    container_name: nebula-graphd
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    command:
+      - --meta_server_addrs=172.28.1.1:9559
+      - --local_ip=172.28.1.3
+    ports:
+      - "9669:9669"
+    depends_on:
+      - metad
+      - storaged
+    networks:
+      nebula-net:
+        ipv4_address: 172.28.1.3
+
+  # NebulaGraph Studio (可视化界面)
+  studio:
+    image: vesoft/nebula-graph-studio:v3.5.0
+    container_name: nebula-studio
+    restart: always
+    ports:
+      - "7001:7001"
+    depends_on:
+      - graphd
+    networks:
+      - nebula-net
+
+networks:
+  nebula-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16

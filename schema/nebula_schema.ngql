@@ -1,0 +1,33 @@
+# NebulaGraph Schema定义
+
+# 创建空间
+CREATE SPACE IF NOT EXISTS abhidharma(partition_num=3, replica_factor=1, vid_type=FIXED_STRING(30));
+
+# 使用空间
+USE abhidharma;
+
+# 创建标签（节点类型）
+CREATE TAG IF NOT EXISTS Concept(
+  name string,
+  description string,
+  category string
+);
+
+# 创建边类型
+CREATE EDGE IF NOT EXISTS BELONGS_TO(
+  description string
+);
+
+CREATE EDGE IF NOT EXISTS RELATES_TO(
+  relation_type string,
+  weight int
+);
+
+CREATE EDGE IF NOT EXISTS CONTAINS(
+  description string,
+  count int
+);
+
+# 创建索引
+CREATE TAG INDEX IF NOT EXISTS concept_name_index ON Concept(name(30));
+CREATE TAG INDEX IF NOT EXISTS concept_category_index ON Concept(category(20));
