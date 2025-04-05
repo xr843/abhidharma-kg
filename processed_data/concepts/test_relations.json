@@ -1,0 +1,38 @@
+[
+  {
+    "source": "cakkhu",
+    "target": "rupa",
+    "type": "属于",
+    "description": "眼根是色法的一种"
+  },
+  {
+    "source": "sota",
+    "target": "rupa",
+    "type": "属于",
+    "description": "耳根是色法的一种"
+  },
+  {
+    "source": "rupa",
+    "target": "asamskrta",
+    "type": "相反",
+    "description": "色法是有为法，与无为法相对"
+  },
+  {
+    "source": "citta",
+    "target": "cetasika",
+    "type": "相应",
+    "description": "心王与心所相应而起"
+  },
+  {
+    "source": "citta_viprayukta_dharma",
+    "target": "citta",
+    "type": "不相应",
+    "description": "心不相应行法与心不相应"
+  },
+  {
+    "source": "citta_viprayukta_dharma",
+    "target": "cetasika",
+    "type": "不相应",
+    "description": "心不相应行法与心所不相应"
+  }
+]

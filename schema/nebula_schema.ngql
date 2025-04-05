@@ -10,7 +10,9 @@ USE abhidharma;
 CREATE TAG IF NOT EXISTS Concept(
   name string,
   description string,
-  category string
+  category string,
+  pali string,
+  sanskrit string
 );
 
 # 创建边类型
@@ -20,7 +22,8 @@ CREATE EDGE IF NOT EXISTS BELONGS_TO(
 
 CREATE EDGE IF NOT EXISTS RELATES_TO(
   relation_type string,
-  weight int
+  weight int DEFAULT 1,
+  description string DEFAULT ""
 );
 
 CREATE EDGE IF NOT EXISTS CONTAINS(

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "rupa",
+    "name": "色法",
+    "description": "可变碍故名色，变碍生故名色。具有变化和障碍性质的物质现象。",
+    "category": "五位七十五法",
+    "pali": "rūpa",
+    "sanskrit": "rūpa"
+  },
+  {
+    "id": "citta",
+    "name": "心法",
+    "description": "集起故名心，思量故名意，了别故名识。能够认知对象的心识作用。",
+    "category": "五位七十五法",
+    "pali": "citta",
+    "sanskrit": "citta"
+  },
+  {
+    "id": "cetasika",
+    "name": "心所法",
+    "description": "是心所有，名心所法。依附于心王而生起的心理作用。",
+    "category": "五位七十五法",
+    "pali": "cetasika",
+    "sanskrit": "caitasika"
+  },
+  {
+    "id": "citta_viprayukta_dharma",
+    "name": "心不相应行法",
+    "description": "不与心相应，名心不相应，簡諸心所。行謂行蘊，簡色、無為。簡色、受、想、無為。不与心相应的各种法。",
+    "category": "五位七十五法",
+    "pali": "citta-vippayutta-dhamma",
+    "sanskrit": "citta-viprayukta-dharma"
+  },
+  {
+    "id": "asamskrta",
+    "name": "无为法",
+    "description": "无因缘为作，故名无为。不受因缘造作的法。",
+    "category": "五位七十五法",
+    "pali": "asaṅkhata",
+    "sanskrit": "asaṃskṛta"
+  },
+  {
+    "id": "cakkhu",
+    "name": "眼根",
+    "description": "内处，眼识所依，能见色境，四大种所造净色为体，有色无见有对。",
+    "category": "色法",
+    "pali": "cakkhu",
+    "sanskrit": "cakṣu"
+  },
+  {
+    "id": "sota",
+    "name": "耳根",
+    "description": "内处，耳识所依，能闻声境，四大种所造净色为体，有色无见有对。",
+    "category": "色法",
+    "pali": "sota",
+    "sanskrit": "śrotra"
+  }
+]
